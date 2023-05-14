@@ -13,6 +13,50 @@
   </head>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
+  <div class="container">
+        <marque>
+            <div class="container" style="width: 100%; padding: 1rem;">
+                <marquee width="100%" height="100%" direction="left">
+                    <h1 id="sentence" style="font-size: 5rem; display: inline-block; font-weight: 900; font-family: sans-serif;">A Special Happy Birthday to RasBihari.</h1>
+                    <h1 id="sentence" style="text-align: center; color: blue;">May God Bless You</h1>
+                    <p id="sentence" style="text-align: center; color: red;">'अगर तुम हो तो घबराने की कोई बात थोड़ी हैं <br> ज़रा सी बूंदा बांदी है बहुत बरसात थोड़ी है..!</p>
+                    </marquee>
+                </div>
+        </marque>
+  </div>
+  <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        const sentenceElement = document.getElementById('sentence');
+        const sentence = sentenceElement.innerHTML;
+        const words = sentence.split(' ');
+
+        sentenceElement.innerHTML = '';
+
+        words.forEach(word => {
+            const span = document.createElement('span');
+            span.className = 'word-color';
+            span.textContent = word + ' ';
+            span.style.color = getRandomColor(); // Function to generate random color
+            sentenceElement.appendChild(span);
+        });
+        });
+
+        function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+
+        return color;
+        }
+
+
+    </script>
+  
+  
+  
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
     <div class="w3-container">
